@@ -3,47 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QT1 TAX — Official Site</title>
-  <meta name="description" content="QT1 TAX — Professional tax preparation and accounting services." />
+  <title>QTax1 — Official Site</title>
+  <meta name="description" content="QTax1 — Professional tax preparation and accounting services in Philadelphia." />
   <style>
     :root{
-      --bg:#0b1220; --surface:#0f172a; --muted:#1f2945; --card:#111b34; --text:#e6eefc; --sub:#a9b7d9; --acc:#86c5ff; --acc2:#7ef0c3; --ring:#2d72ff;
-      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35)
+      --bg:#f9fafb; --surface:#ffffff; --muted:#e5e7eb; --card:#ffffff; --text:#1f2937; --sub:#4b5563; --acc:#16a34a; --acc2:#22c55e; --ring:#16a34a;
+      --radius:14px; --shadow:0 4px 14px rgba(0,0,0,.08)
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;color:var(--text);background:radial-gradient(1000px 600px at 80% -10%,#1a2b57 0%,transparent 60%),linear-gradient(180deg,#0a1020 0%,#0b1220 100%);}
-    a{color:var(--acc)}
-    header{position:sticky;top:0;z-index:20;background:rgba(10,16,32,.7);backdrop-filter: blur(10px);border-bottom:1px solid #213059}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;color:var(--text);background:var(--bg);}
+    a{color:var(--acc);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--muted);box-shadow:0 2px 4px rgba(0,0,0,.05)}
     .wrap{max-width:1100px;margin:0 auto;padding:20px}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(145deg,var(--acc),var(--acc2));box-shadow:inset 0 0 22px rgba(255,255,255,.25)}
-    .brand h1{font-size:18px;margin:0;letter-spacing:.5px}
+    .logo{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,var(--acc),var(--acc2));box-shadow:inset 0 0 10px rgba(255,255,255,.3)}
+    .brand h1{font-size:20px;margin:0;letter-spacing:.5px;color:var(--acc)}
     nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .tab{padding:10px 14px;border:1px solid #223059;border-radius:999px;background:linear-gradient(180deg,#0e1834,#0a1326);color:var(--text);cursor:pointer}
-    .tab[aria-selected="true"]{outline:2px solid var(--ring);box-shadow:0 0 0 4px rgba(45,114,255,.25)}
+    .tab{padding:10px 16px;border:1px solid var(--muted);border-radius:999px;background:#f3f4f6;color:var(--text);cursor:pointer;transition:.2s}
+    .tab:hover{background:#e5e7eb}
+    .tab[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc)}
 
     main{max-width:1100px;margin:28px auto;padding:0 20px}
     .panel{display:none}
     .panel.active{display:block}
 
     .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
-    .card{background:linear-gradient(180deg,var(--surface),#0b142e);border:1px solid #223059;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h2{margin-top:0}
+    .card{background:var(--card);border:1px solid var(--muted);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h2{margin-top:0;color:var(--acc)}
 
     .dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .dept{padding:16px;border-radius:14px;border:1px solid #223059;background:linear-gradient(180deg,#0f1b3b,#0d1730)}
-    .dept h3{margin:0 0 8px 0}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#1b2a55;border:1px solid #2a3e7a;color:#b9c8ef;font-size:12px}
+    .dept{padding:16px;border-radius:12px;border:1px solid var(--muted);background:#fdfdfd;box-shadow:var(--shadow)}
+    .dept h3{margin:0 0 8px 0;color:var(--acc)}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#dcfce7;color:#166534;font-size:12px}
     .kv{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:start;margin:8px 0}
 
     .subtabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px 0}
-    .subtabs button{padding:8px 12px;border-radius:10px;border:1px solid #223059;background:#0e1834;color:var(--text);cursor:pointer}
-    .subtabs button.active{outline:2px solid var(--ring)}
+    .subtabs button{padding:8px 12px;border-radius:10px;border:1px solid var(--muted);background:#f3f4f6;color:var(--text);cursor:pointer}
+    .subtabs button.active{background:var(--acc);color:#fff;border-color:var(--acc)}
 
     .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .contact-card .card{min-height:160px}
 
-    footer{margin:40px 0;padding:30px 20px;border-top:1px solid #223059;color:var(--sub)}
+    footer{margin:40px 0;padding:30px 20px;border-top:1px solid var(--muted);color:var(--sub);background:#fff}
 
     @media (max-width:860px){.hero{grid-template-columns:1fr}.contact-card{grid-template-columns:1fr}}
   </style>
@@ -51,9 +53,9 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="brand" role="img" aria-label="QT1 TAX logo and brand">
+      <div class="brand" role="img" aria-label="QTax1 logo and brand">
         <div class="logo" aria-hidden="true"></div>
-        <h1>QT1 TAX</h1>
+        <h1>QTax1</h1>
       </div>
       <nav role="tablist" aria-label="Main">
         <button class="tab" role="tab" aria-selected="true" data-tab="home">Home</button>
@@ -71,19 +73,24 @@
     <section id="home" class="panel active" role="tabpanel" aria-labelledby="home-tab">
       <div class="hero">
         <div class="card">
-          <h2>Stress‑free taxes, clear results</h2>
-          <p>We handle personal and business returns, bookkeeping, payroll, and advisory. Transparent pricing, secure data handling, and fast turnarounds.</p>
+          <h2>Stress-free taxes, clear results</h2>
+          <p>QTax1 is your trusted tax preparation service located inside Makkah Market, Philadelphia. We handle personal and business returns, bookkeeping, payroll, and advisory. Transparent pricing, secure data handling, and fast turnarounds.</p>
           <ul>
-            <li>Same‑day consults (by appointment)</li>
-            <li>E‑file with direct deposit</li>
-            <li>Multi‑state + small business experts</li>
+            <li>Same-day consults (by appointment)</li>
+            <li>E-file with direct deposit</li>
+            <li>Multi-state + small business experts</li>
           </ul>
         </div>
         <div class="card">
-          <h2>This season</h2>
-          <p><strong>Hours:</strong> Mon–Fri 9am–6pm, Sat 10am–3pm</p>
-          <p><strong>Address:</strong> 123 Main St, Philadelphia, PA</p>
-          <p><strong>Phone:</strong> <a href="tel:+12155550123">(215) 555‑0123</a></p>
+          <h2>Location & Hours</h2>
+          <p><strong>Located in:</strong> Makkah Market</p>
+          <p><strong>Address:</strong> 5238, 4249 Walnut St, Philadelphia, PA 19104</p>
+          <p><strong>Phone:</strong> <a href="tel:+12153861321">(215) 386-1321</a></p>
+          <p><strong>Hours:</strong><br>
+            Mon–Thu 10am–6pm<br>
+            Fri 10am–6pm<br>
+            Sat Closed<br>
+            Sun Closed</p>
         </div>
       </div>
     </section>
@@ -124,14 +131,15 @@
       <div class="contact-card">
         <div class="card">
           <h2>Call / Visit</h2>
-          <p><strong>Phone:</strong> <a href="tel:+12155550123">(215) 555‑0123</a></p>
-          <p><strong>Email:</strong> <a href="mailto:info@qt1tax.com">info@qt1tax.com</a></p>
-          <p><strong>Address:</strong> 123 Main St, Philadelphia, PA</p>
+          <p><strong>Phone:</strong> <a href="tel:+12153861321">(215) 386-1321</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@qtax1.com">info@qtax1.com</a></p>
+          <p><strong>Address:</strong> 5238, 4249 Walnut St, Philadelphia, PA 19104</p>
+          <p><strong>Located in:</strong> Makkah Market</p>
         </div>
         <div class="card">
           <h2>Hours</h2>
-          <p>Mon–Fri 9am–6pm</p>
-          <p>Sat 10am–3pm</p>
+          <p>Mon–Fri 10am–6pm</p>
+          <p>Sat Closed</p>
           <p>Sun Closed</p>
         </div>
       </div>
@@ -150,81 +158,77 @@
   <footer>
     <div class="wrap">
       <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-        <div>© <span id="yr"></span> QT1 TAX. All rights reserved.</div>
+        <div>© <span id="yr"></span> QTax1. All rights reserved.</div>
         <div>Privacy • Terms • <a href="#portal">Client Portal</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-  // ---------- Data you can edit quickly ----------
   const DEPARTMENTS = [
     {
       id:"personal",
       name:"Personal Tax",
-      lead:"1040s, credits, multi‑state, amendments",
-      email:"personal@qt1tax.com",
-      phone:"+12155550123",
+      lead:"1040s, credits, multi-state, amendments",
+      email:"personal@qtax1.com",
+      phone:"+12153861321",
       manager:"Heba Abdelkreem",
-      hours:"Mon–Fri 9–6",
-      address:"123 Main St, Philadelphia, PA 19104",
-      services:["1040 w/ W‑2s","Itemized deductions","Amendments","ITIN help","State & local"]
+      hours:"Mon–Fri 10–6",
+      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
+      services:["1040 w/ W-2s","Itemized deductions","Amendments","ITIN help","State & local"]
     },
     {
       id:"business",
       name:"Business Tax",
-      lead:"LLC, S‑Corp, C‑Corp, partnerships",
-      email:"business@qt1tax.com",
-      phone:"+12155550124",
+      lead:"LLC, S-Corp, C-Corp, partnerships",
+      email:"business@qtax1.com",
+      phone:"+12153861321",
       manager:"Mohamed Hassanein",
-      hours:"Mon–Fri 9–6",
-      address:"123 Main St, Philadelphia, PA 19104",
+      hours:"Mon–Fri 10–6",
+      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
       services:["1120/1120S/1065","Quarterly estimates","Sales tax","Entity setup","Tax planning"]
     },
     {
       id:"bookkeeping",
       name:"Bookkeeping",
       lead:"Monthly close, QuickBooks, cleanup",
-      email:"books@qt1tax.com",
-      phone:"+12155550125",
+      email:"books@qtax1.com",
+      phone:"+12153861321",
       manager:"Sara Ali",
-      hours:"Mon–Fri 9–5",
-      address:"123 Main St, Philadelphia, PA 19104",
-      services:["QB Online setup","Catch‑up & cleanup","AR/AP","Financial statements","Payroll add‑on"]
+      hours:"Mon–Fri 10–5",
+      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
+      services:["QB Online setup","Catch-up & cleanup","AR/AP","Financial statements","Payroll add-on"]
     },
     {
       id:"payroll",
       name:"Payroll",
-      lead:"Onboarding, filings, W‑2/1099 year‑end",
-      email:"payroll@qt1tax.com",
-      phone:"+12155550126",
+      lead:"Onboarding, filings, W-2/1099 year-end",
+      email:"payroll@qtax1.com",
+      phone:"+12153861321",
       manager:"Yousef N.",
-      hours:"Mon–Fri 9–5",
-      address:"123 Main St, Philadelphia, PA 19104",
-      services:["Direct deposit","Tax deposits","Quarterly 941/940","PA/City regs","Year‑end forms"]
+      hours:"Mon–Fri 10–5",
+      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
+      services:["Direct deposit","Tax deposits","Quarterly 941/940","PA/City regs","Year-end forms"]
     }
   ];
 
   const SERVICE_CATALOG = [
-    {title:"Individual Returns", desc:"1040, credits, dependents, e‑file."},
-    {title:"Business Returns", desc:"1065, 1120S/1120, multi‑state."},
+    {title:"Individual Returns", desc:"1040, credits, dependents, e-file."},
+    {title:"Business Returns", desc:"1065, 1120S/1120, multi-state."},
     {title:"Bookkeeping", desc:"Monthly close, reconciliation, reports."},
-    {title:"Payroll", desc:"Run payroll, file taxes, year‑end forms."},
+    {title:"Payroll", desc:"Run payroll, file taxes, year-end forms."},
     {title:"Advisory", desc:"Tax planning, entity selection, audits."},
   ]
 
-  // ---------- Tabs logic ----------
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.panel');
   tabs.forEach(btn=>btn.addEventListener('click',()=>{
     const id = btn.dataset.tab;
     tabs.forEach(b=>b.setAttribute('aria-selected', String(b===btn)));
     panels.forEach(p=>p.classList.toggle('active', p.id===id));
-    // Move focus to panel for a11y
     document.getElementById(id).focus?.();
   }));
 
-  // ---------- Build services ----------
   const srv = document.getElementById('services-list');
   srv.innerHTML = SERVICE_CATALOG.map(s=>`
     <div class="dept">
@@ -233,7 +237,6 @@
     </div>
   `).join('');
 
-  // ---------- Build department subtabs + panels ----------
   const deptTabs = document.getElementById('dept-tabs');
   const deptPanels = document.getElementById('dept-panels');
   function renderDepartments(){
@@ -251,7 +254,6 @@
       </section>
     `).join('');
 
-    // wire up subtabs
     deptTabs.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
       const id = btn.dataset.dept;
       deptTabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b===btn));
