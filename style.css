@@ -544,3 +544,235 @@ a:hover {
     overflow: hidden;
   }
 }
+
+.reviews-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.agg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.agg-text {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: #14532d;
+}
+
+.g-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 12px;
+  opacity: .85;
+}
+
+.reviews-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid var(--muted);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.avatar-mini {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta b {
+  color: #0f172a;
+}
+
+.meta small {
+  color: #64748b;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.star svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.review-text {
+  color: #475569;
+  margin-top: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-actions {
+  margin-top: 8px;
+}
+
+.review-actions button {
+  background: none;
+  border: none;
+  color: var(--acc);
+  cursor: pointer;
+  padding: 0;
+}
+
+.reviews-more {
+  display: grid;
+  place-items: center;
+  margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .reviews-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .review-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+
+  .reviews-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .review-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+
+  .reviews-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .reviews-more {
+    display: none;
+  }
+}
+
+/* Center layout on mobile */
+@media (max-width: 640px) {
+  .reviews-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .agg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .reviews-ctas {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+/* Make the header "fixed" (sticky) on mobile while swiping */
+@media (max-width: 640px) {
+  #reviews .reviews-head {
+    position: sticky;
+    top: var(--reviews-sticky-top, 0);
+    /* tweak if your site has a sticky header (e.g. 56px) */
+    z-index: 2;
+    background: var(--bg);
+    padding: 8px 0;
+  }
+}
+
+/* Cursor pointer for the "Load more" button on desktop */
+#loadMoreReviews {
+  cursor: pointer;
+}

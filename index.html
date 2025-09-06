@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <script src="reviews.js" defer></script>
 </head>
 
 <body>
@@ -91,23 +92,37 @@
       </div>
     </section>
 
-    <section id="team" class="block soft">
-      <h2 class="section-title">Our Experts</h2>
-      <div class="wrap team-row">
-        <div class="member">
-          <div class="avatar"></div>
-          <h4></h4><span>Bookkeeping Manager</span>
+    <section id="reviews" class="block soft" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <h2 id="reviews-title" class="section-title">Google Reviews</h2>
+
+        <div class="reviews-head">
+          <div class="agg">
+            <div class="stars" aria-label="Average rating">
+            </div>
+            <div class="agg-text">
+              <b class="agg-rating">4.7</b>
+              <span class="agg-count">· 43 reviews</span>
+              <span class="g-mark" aria-hidden="true">G</span>
+            </div>
+          </div>
+          <div class="reviews-ctas">
+            <a class="pill" id="readOnGoogle" target="_blank" rel="noopener">Read on Google</a>
+            <a class="cta" id="leaveAReview" target="_blank" rel="noopener">Leave a review</a>
+          </div>
         </div>
-        <div class="member">
-          <div class="avatar"></div>
-          <h4></h4><span>Business Tax Lead</span>
+
+        <div class="reviews-grid" role="list" id="reviewsList">
         </div>
-        <div class="member">
-          <div class="avatar"></div>
-          <h4></h4><span>Client Support Lead</span>
+
+        <div class="reviews-more">
+          <button class="pill" id="loadMoreReviews">Load more</button>
         </div>
+
+        <script type="application/ld+json" id="reviewsLD"></script>
       </div>
     </section>
+
 
     <section id="contact" class="block">
       <h2 class="section-title">Contact</h2>
