@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,13 +9,21 @@
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
+
 <body>
+
+
 
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="./">
         <img src="Logo_with_tp_background.png" alt="QTax1 Logo" class="logo">
       </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="main-nav" aria-label="Main">
         <a href="#services" class="pill">Services</a>
         <a href="#team" class="pill">Team</a>
@@ -27,8 +36,9 @@
   <section class="hero-band">
     <div class="wrap hero-grid">
       <div>
-        <h1 class="hero-title">Friendly experts for <span class="hi">Taxes</span>, <span class="hi">Immigration</span>, and <span class="hi">Business</span></h1>
-        <p class="lead">Above Makkah Market — 4249 Walnut St, Philadelphia, PA 19104 • (215) 386-1321</p>
+        <h1 class="hero-title">Friendly experts for <span class="hi">Taxes</span>, <span class="hi">Immigration</span>,
+          and <span class="hi">Business</span></h1>
+        <p class="lead">Above Makkah Market — 4249 Walnut St, Philadelphia, PA 19104<br>(215) 386-1321</p>
         <div class="hero-actions">
           <a class="cta" href="#services">See Services</a>
           <a class="pill" href="#contact">Get Directions</a>
@@ -84,9 +94,18 @@
     <section id="team" class="block soft">
       <h2 class="section-title">Our Experts</h2>
       <div class="wrap team-row">
-        <div class="member"><div class="avatar"></div><h4></h4><span>Bookkeeping Manager</span></div>
-        <div class="member"><div class="avatar"></div><h4></h4><span>Business Tax Lead</span></div>
-        <div class="member"><div class="avatar"></div><h4></h4><span>Client Support Lead</span></div>
+        <div class="member">
+          <div class="avatar"></div>
+          <h4></h4><span>Bookkeeping Manager</span>
+        </div>
+        <div class="member">
+          <div class="avatar"></div>
+          <h4></h4><span>Business Tax Lead</span>
+        </div>
+        <div class="member">
+          <div class="avatar"></div>
+          <h4></h4><span>Client Support Lead</span>
+        </div>
       </div>
     </section>
 
@@ -101,8 +120,8 @@
         </div>
         <div class="info-card">
           <h3>Newsletter</h3>
-          <form onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch.')">
-            <input required placeholder="Enter your email" class="input"/>
+          <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
+            <input required placeholder="Enter your email" class="input" />
             <button class="cta" style="width:100%">Submit</button>
           </form>
         </div>
@@ -111,7 +130,11 @@
 
     <section id="portal" class="block soft">
       <h2 class="section-title">Client Portal (coming soon)</h2>
-      <div class="wrap"><div class="info-card"><p>PLACEHOLDER FO R NOW</p></div></div>
+      <div class="wrap">
+        <div class="info-card">
+          <p>PLACEHOLDER FO R NOW</p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -123,4 +146,5 @@
   </footer>
 
 </body>
+
 </html>
