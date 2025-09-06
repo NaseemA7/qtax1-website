@@ -3,275 +3,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QTax1 — Official Site</title>
-  <meta name="description" content="QTax1 — Professional tax preparation and accounting services in Philadelphia." />
-  <style>
-    :root{
-      --bg:#f9fafb; --surface:#ffffff; --muted:#e5e7eb; --card:#ffffff; --text:#1f2937; --sub:#4b5563; --acc:#16a34a; --acc2:#22c55e; --ring:#16a34a;
-      --radius:14px; --shadow:0 4px 14px rgba(0,0,0,.08)
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;color:var(--text);background:var(--bg);}
-    a{color:var(--acc);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--muted);box-shadow:0 2px 4px rgba(0,0,0,.05)}
-    .wrap{max-width:1100px;margin:0 auto;padding:20px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,var(--acc),var(--acc2));box-shadow:inset 0 0 10px rgba(255,255,255,.3)}
-    .brand h1{font-size:20px;margin:0;letter-spacing:.5px;color:var(--acc)}
-    nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .tab{padding:10px 16px;border:1px solid var(--muted);border-radius:999px;background:#f3f4f6;color:var(--text);cursor:pointer;transition:.2s}
-    .tab:hover{background:#e5e7eb}
-    .tab[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc)}
-
-    main{max-width:1100px;margin:28px auto;padding:0 20px}
-    .panel{display:none}
-    .panel.active{display:block}
-
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
-    .card{background:var(--card);border:1px solid var(--muted);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h2{margin-top:0;color:var(--acc)}
-
-    .dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .dept{padding:16px;border-radius:12px;border:1px solid var(--muted);background:#fdfdfd;box-shadow:var(--shadow)}
-    .dept h3{margin:0 0 8px 0;color:var(--acc)}
-    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#dcfce7;color:#166534;font-size:12px}
-    .kv{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:start;margin:8px 0}
-
-    .subtabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px 0}
-    .subtabs button{padding:8px 12px;border-radius:10px;border:1px solid var(--muted);background:#f3f4f6;color:var(--text);cursor:pointer}
-    .subtabs button.active{background:var(--acc);color:#fff;border-color:var(--acc)}
-
-    .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .contact-card .card{min-height:160px}
-
-    footer{margin:40px 0;padding:30px 20px;border-top:1px solid var(--muted);color:var(--sub);background:#fff}
-
-    @media (max-width:860px){.hero{grid-template-columns:1fr}.contact-card{grid-template-columns:1fr}}
-  </style>
+  <title>QTax1 — Taxes • Immigration • Business Services</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand" role="img" aria-label="QTax1 logo and brand">
-        <div class="logo" aria-hidden="true"></div>
-        <h1>QTax1</h1>
-      </div>
-      <nav role="tablist" aria-label="Main">
-        <button class="tab" role="tab" aria-selected="true" data-tab="home">Home</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="services">Services</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="departments">Departments</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="resources">Resources</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="contact">Contact</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="portal" title="Client Portal (coming soon)">Client Portal</button>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img src="Logo_with_tp_background.png" alt="QTax1 Logo" class="logo">
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#services" class="pill">Services</a>
+        <a href="#team" class="pill">Team</a>
+        <a href="#contact" class="pill">Contact</a>
+        <a href="#portal" class="cta">Client Portal</a>
       </nav>
     </div>
   </header>
 
+  <section class="hero-band">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="hero-title">Friendly experts for <span class="hi">Taxes</span>, <span class="hi">Immigration</span>, and <span class="hi">Business</span></h1>
+        <p class="lead">Inside Makkah Market — 5238, 4249 Walnut St, Philadelphia, PA 19104 • (215) 386-1321</p>
+        <div class="hero-actions">
+          <a class="cta" href="#services">See Services</a>
+          <a class="pill" href="#contact">Get Directions</a>
+        </div>
+      </div>
+      <aside class="info-card">
+        <h3>Hours</h3>
+        <p>Mon–Fri 10am–6pm • Sat/Sun Closed</p>
+        <h3 style="margin-top:10px">Call</h3>
+        <p><a href="tel:+12153861321">(215) 386-1321</a></p>
+      </aside>
+    </div>
+  </section>
+
   <main>
-    <!-- HOME -->
-    <section id="home" class="panel active" role="tabpanel" aria-labelledby="home-tab">
-      <div class="hero">
-        <div class="card">
-          <h2>Stress-free taxes, clear results</h2>
-          <p>QTax1 is your trusted tax preparation service located inside Makkah Market, Philadelphia. We handle personal and business returns, bookkeeping, payroll, and advisory. Transparent pricing, secure data handling, and fast turnarounds.</p>
-          <ul>
-            <li>Same-day consults (by appointment)</li>
-            <li>E-file with direct deposit</li>
-            <li>Multi-state + small business experts</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h2>Location & Hours</h2>
-          <p><strong>Located in:</strong> Makkah Market</p>
-          <p><strong>Address:</strong> 5238, 4249 Walnut St, Philadelphia, PA 19104</p>
-          <p><strong>Phone:</strong> <a href="tel:+12153861321">(215) 386-1321</a></p>
-          <p><strong>Hours:</strong><br>
-            Mon–Thu 10am–6pm<br>
-            Fri 10am–6pm<br>
-            Sat Closed<br>
-            Sun Closed</p>
-        </div>
+    <section id="services" class="block">
+      <h2 class="section-title">Services</h2>
+      <div class="wrap services-col">
+
+        <a class="service-btn" href="services/immigration.html">
+          <span class="ico">🛂</span>
+          <div><strong>Immigration Application Filing</strong><br><span></span></div>
+        </a>
+
+        <a class="service-btn" href="services/translation.html">
+          <span class="ico">🗣️</span>
+          <div><strong>Translation</strong><br><span>English • Arabic • French</span></div>
+        </a>
+
+        <a class="service-btn" href="services/notary.html">
+          <span class="ico">🖊️</span>
+          <div><strong>Notary Public Services</strong><br><span></span></div>
+        </a>
+
+        <a class="service-btn" href="services/business-services.html">
+          <span class="ico">📑</span>
+          <div><strong>Business Services & Formation</strong><br><span></span></div>
+        </a>
+
+        <a class="service-btn" href="services/sales-tax.html">
+          <span class="ico">🧾</span>
+          <div><strong>Sales Tax Filing</strong><br><span></span></div>
+        </a>
+
+        <a class="service-btn" href="services/payroll.html">
+          <span class="ico">💼</span>
+          <div><strong>Payroll Services</strong><br><span></span></div>
+        </a>
+
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="panel" role="tabpanel">
-      <div class="card">
-        <h2>Services</h2>
-        <div class="dept-grid" id="services-list"></div>
+    <section id="team" class="block soft">
+      <h2 class="section-title">Our Experts</h2>
+      <div class="wrap team-row">
+        <div class="member"><div class="avatar"></div><h4></h4><span>Bookkeeping Manager</span></div>
+        <div class="member"><div class="avatar"></div><h4></h4><span>Business Tax Lead</span></div>
+        <div class="member"><div class="avatar"></div><h4></h4><span>Client Support Lead</span></div>
       </div>
     </section>
 
-    <!-- DEPARTMENTS -->
-    <section id="departments" class="panel" role="tabpanel">
-      <div class="card">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-          <h2 style="margin:0">Departments</h2>
-          <div class="subtabs" role="tablist" aria-label="Departments" id="dept-tabs"></div>
-        </div>
-        <div id="dept-panels"></div>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources" class="panel" role="tabpanel">
-      <div class="card">
-        <h2>Resources</h2>
-        <ul>
-          <li><a href="#" aria-disabled="true">2025 Tax Checklist (PDF)</a> — add your own doc later</li>
-          <li><a href="#" aria-disabled="true">New Client Intake Form</a> — link your Google Form</li>
-          <li><a href="#" aria-disabled="true">Payment Policy</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="panel" role="tabpanel">
-      <div class="contact-card">
-        <div class="card">
-          <h2>Call / Visit</h2>
+    <section id="contact" class="block">
+      <h2 class="section-title">Contact</h2>
+      <div class="wrap contact-grid">
+        <div class="info-card">
+          <h3>Visit</h3>
+          <p><strong>Located in:</strong> Makkah Market<br>5238, 4249 Walnut St, Philadelphia, PA 19104</p>
           <p><strong>Phone:</strong> <a href="tel:+12153861321">(215) 386-1321</a></p>
           <p><strong>Email:</strong> <a href="mailto:info@qtax1.com">info@qtax1.com</a></p>
-          <p><strong>Address:</strong> 5238, 4249 Walnut St, Philadelphia, PA 19104</p>
-          <p><strong>Located in:</strong> Makkah Market</p>
         </div>
-        <div class="card">
-          <h2>Hours</h2>
-          <p>Mon–Fri 10am–6pm</p>
-          <p>Sat Closed</p>
-          <p>Sun Closed</p>
+        <div class="info-card">
+          <h3>Newsletter</h3>
+          <form onsubmit="event.preventDefault(); alert('Thanks! We\\'ll be in touch.')">
+            <input required placeholder="Enter your email" class="input"/>
+            <button class="cta" style="width:100%">Submit</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- PORTAL (placeholder) -->
-    <section id="portal" class="panel" role="tabpanel">
-      <div class="card">
-        <h2>Client Portal (coming soon)</h2>
-        <p>When launched, clients will log in with a username & password to upload documents securely. For now, please use the <a href="#resources">Resources</a> or contact your preparer.</p>
-        <p class="badge">Planned stack: Supabase (Auth + Storage) or Firebase (Auth + Storage). Backend optional via Cloudflare Workers.</p>
-      </div>
+    <section id="portal" class="block soft">
+      <h2 class="section-title">Client Portal (coming soon)</h2>
+      <div class="wrap"><div class="info-card"><p>PLACEHOLDER FO R NOW</p></div></div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-        <div>© <span id="yr"></span> QTax1. All rights reserved.</div>
-        <div>Privacy • Terms • <a href="#portal">Client Portal</a></div>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img src="Logo_with_tp_background.png" alt="QTax1 Logo" class="logo small">
+      <span>© <span id="yr"></span> QTax1. All rights reserved.</span>
     </div>
   </footer>
 
-  <script>
-  const DEPARTMENTS = [
-    {
-      id:"personal",
-      name:"Personal Tax",
-      lead:"1040s, credits, multi-state, amendments",
-      email:"personal@qtax1.com",
-      phone:"+12153861321",
-      manager:"Heba Abdelkreem",
-      hours:"Mon–Fri 10–6",
-      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
-      services:["1040 w/ W-2s","Itemized deductions","Amendments","ITIN help","State & local"]
-    },
-    {
-      id:"business",
-      name:"Business Tax",
-      lead:"LLC, S-Corp, C-Corp, partnerships",
-      email:"business@qtax1.com",
-      phone:"+12153861321",
-      manager:"Mohamed Hassanein",
-      hours:"Mon–Fri 10–6",
-      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
-      services:["1120/1120S/1065","Quarterly estimates","Sales tax","Entity setup","Tax planning"]
-    },
-    {
-      id:"bookkeeping",
-      name:"Bookkeeping",
-      lead:"Monthly close, QuickBooks, cleanup",
-      email:"books@qtax1.com",
-      phone:"+12153861321",
-      manager:"Sara Ali",
-      hours:"Mon–Fri 10–5",
-      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
-      services:["QB Online setup","Catch-up & cleanup","AR/AP","Financial statements","Payroll add-on"]
-    },
-    {
-      id:"payroll",
-      name:"Payroll",
-      lead:"Onboarding, filings, W-2/1099 year-end",
-      email:"payroll@qtax1.com",
-      phone:"+12153861321",
-      manager:"Yousef N.",
-      hours:"Mon–Fri 10–5",
-      address:"5238, 4249 Walnut St, Philadelphia, PA 19104",
-      services:["Direct deposit","Tax deposits","Quarterly 941/940","PA/City regs","Year-end forms"]
-    }
-  ];
-
-  const SERVICE_CATALOG = [
-    {title:"Individual Returns", desc:"1040, credits, dependents, e-file."},
-    {title:"Business Returns", desc:"1065, 1120S/1120, multi-state."},
-    {title:"Bookkeeping", desc:"Monthly close, reconciliation, reports."},
-    {title:"Payroll", desc:"Run payroll, file taxes, year-end forms."},
-    {title:"Advisory", desc:"Tax planning, entity selection, audits."},
-  ]
-
-  const tabs = document.querySelectorAll('.tab');
-  const panels = document.querySelectorAll('.panel');
-  tabs.forEach(btn=>btn.addEventListener('click',()=>{
-    const id = btn.dataset.tab;
-    tabs.forEach(b=>b.setAttribute('aria-selected', String(b===btn)));
-    panels.forEach(p=>p.classList.toggle('active', p.id===id));
-    document.getElementById(id).focus?.();
-  }));
-
-  const srv = document.getElementById('services-list');
-  srv.innerHTML = SERVICE_CATALOG.map(s=>`
-    <div class="dept">
-      <h3>${s.title}</h3>
-      <p>${s.desc}</p>
-    </div>
-  `).join('');
-
-  const deptTabs = document.getElementById('dept-tabs');
-  const deptPanels = document.getElementById('dept-panels');
-  function renderDepartments(){
-    deptTabs.innerHTML = DEPARTMENTS.map((d,i)=>`<button role="tab" class="${i===0?'active':''}" data-dept="${d.id}">${d.name}</button>`).join('');
-    deptPanels.innerHTML = DEPARTMENTS.map((d,i)=>`
-      <section class="dept" id="dept-${d.id}" style="${i===0?'':'display:none'}">
-        <span class="badge">Manager: ${d.manager}</span>
-        <h3 style="margin-top:10px">${d.name}</h3>
-        <p>${d.lead}</p>
-        <div class="kv"><div><strong>Email</strong></div><div><a href="mailto:${d.email}">${d.email}</a></div></div>
-        <div class="kv"><div><strong>Phone</strong></div><div><a href="tel:${d.phone}">${formatPhone(d.phone)}</a></div></div>
-        <div class="kv"><div><strong>Hours</strong></div><div>${d.hours}</div></div>
-        <div class="kv"><div><strong>Address</strong></div><div>${d.address}</div></div>
-        <div class="kv"><div><strong>Services</strong></div><div>${d.services.map(x=>`• ${x}`).join('<br>')}</div></div>
-      </section>
-    `).join('');
-
-    deptTabs.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
-      const id = btn.dataset.dept;
-      deptTabs.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b===btn));
-      DEPARTMENTS.forEach(d=>{
-        const el = document.getElementById(`dept-${d.id}`);
-        el.style.display = (d.id===id)?'block':'none';
-      });
-    }));
-  }
-
-  function formatPhone(p){
-    const digits = (p+"").replace(/\D/g,"");
-    return digits.length===11?`(${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`:
-           digits.length===10?`(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`:p;
-  }
-
-  renderDepartments();
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
