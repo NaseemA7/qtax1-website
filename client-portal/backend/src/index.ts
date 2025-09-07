@@ -1,17 +1,16 @@
 import express from 'express';
 import cors from 'cors';
-import cookieParser from 'cookie-parser';
 import { authRouter } from './auth/routes';
-
+import { adminRouter } from './admin/routes';
 
 const app = express();
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors());
 app.use(express.json());
-app.use(cookieParser());
 
-
-app.get('/health', (_, res) => res.json({ ok: true }));
 app.use('/auth', authRouter);
+app.use('/admin', adminRouter);
 
-
-app.listen(4000, () => console.log('API on http://localhost:4000'));
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`API on http://localhost:${PORT}`);
+});

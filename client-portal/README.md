@@ -114,3 +114,61 @@ export default defineConfig({ plugins: [react()] });
 
 Login fails / CORS / 404
 Check frontend/.env has VITE_API_BASE_URL=http://localhost:4000 and restart npm run dev.
+
+
+
+
+
+
+
+
+
+-------------------------------------------
+
+FOR CLIENT PORTAL TESTING: 
+0) Prereqs check (one time)
+
+Docker Desktop is running.
+
+DB is up:
+
+cd client-portal
+docker compose up -d
+
+
+Migrations up to date:
+
+cd backend
+npm run prisma:generate
+npm run prisma:migrate -- --name add_invite_token
+
+1) Start the backend API
+cd client-portal/backend
+npm run dev
+
+
+You should see: API on http://localhost:4000
+
+Leave this terminal open.
+
+2) Start the frontend
+
+Open a new terminal:
+
+cd client-portal/frontend
+copy .env.example .env  # if you haven’t
+# ensure the file contains: VITE_API_BASE_URL=http://localhost:4000
+npm run dev
+
+
+Vite prints a URL like http://localhost:5173/.
+
+3) Log in as SUPER_ADMIN
+
+Visit http://localhost:5173/login
+
+Email: super@qtax1.net
+
+Password: ChangeMe123!
+
+You should land on /admin.
