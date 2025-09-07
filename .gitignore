@@ -3,8 +3,8 @@ node_modules/
 npm-debug.log
 yarn-error.log
 pnpm-debug.log
-frontend/node_modules
-backend/node_modules
+client-portal/frontend/node_modules
+client-portal/backend/node_modules
 
 # Env files
 .env
