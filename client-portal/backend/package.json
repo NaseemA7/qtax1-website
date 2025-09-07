@@ -1,0 +1,33 @@
+{
+"name": "qtax-portal-backend",
+"private": true,
+"type": "module",
+"scripts": {
+"dev": "tsx watch src/index.ts",
+"build": "tsc -p .",
+"start": "node dist/index.js",
+"prisma:generate": "prisma generate",
+"prisma:migrate": "prisma migrate dev",
+"prisma:deploy": "prisma migrate deploy"
+},
+"dependencies": {
+"argon2": "^0.41.1",
+"cookie-parser": "^1.4.6",
+"cors": "^2.8.5",
+"dotenv": "^16.4.5",
+"express": "^4.19.2",
+"joi": "^17.12.3",
+"jsonwebtoken": "^9.0.2",
+"nanoid": "^5.0.7",
+"nodemailer": "^6.9.14",
+"@prisma/client": "^5.16.2"
+},
+"devDependencies": {
+"@types/cookie-parser": "^1.4.7",
+"@types/express": "^4.17.21",
+"@types/jsonwebtoken": "^9.0.6",
+"prisma": "^5.16.2",
+"tsx": "^4.16.2",
+"typescript": "^5.5.4"
+}
+}

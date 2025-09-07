@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  BUSINESS_OWNER
+  BUSINESS_STAFF
+  INDIVIDUAL_CLIENT
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         Role
+  createdAt    DateTime @default(now())
+
+  // Back-relations
+  resetTokens   PasswordResetToken[]
+  businessRoles UserBusinessRole[]
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  tokenHash String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Business {
+  id        String   @id @default(cuid())
+  legalName String
+  ein       String?
+  createdAt DateTime @default(now())
+
+  members UserBusinessRole[]
+}
+
+model UserBusinessRole {
+  id     String @id @default(cuid())
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  businessId String
+
+  role      Role // BUSINESS_OWNER or BUSINESS_STAFF typically
+  createdAt DateTime @default(now())
+}
