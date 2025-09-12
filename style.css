@@ -823,11 +823,16 @@ a:hover {
   display: inline-block;
   text-align: center;
   margin-top: 20px;
+  max-width: 100%;
 }
 
 .owners-img-circle {
   width: 400px;
   height: 400px;
+  max-width: 90vw;
+  /* don’t overflow screen width */
+  max-height: 90vw;
+  /* keeps it square on small screens */
   object-fit: cover;
   object-position: center 20%;
   border-radius: 50%;
@@ -847,4 +852,23 @@ a:hover {
   font-weight: bold;
   font-size: 1.1rem;
   line-height: 1.4;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .owners-img-circle {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .owners-img-circle {
+    width: 275px;
+    height: 275px;
+  }
+
+  .owners-name {
+    font-size: 1rem;
+  }
 }
