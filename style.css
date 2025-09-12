@@ -795,19 +795,10 @@ a:hover {
   height: 38px;
   border-radius: 50%;
   font-size: 18px;
+  background: #22c55e; /* nice green */
   color: #fff;
   text-decoration: none;
-  /* removes underline */
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.social-links a.facebook {
-  background: #3b5998;
-  /* Facebook blue */
-}
-
-.social-links a.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .social-links a:hover {
@@ -821,7 +812,6 @@ a:hover {
     gap: 10px;
     text-align: center;
   }
-
   .social-links {
     justify-content: center;
   }
