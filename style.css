@@ -15,6 +15,10 @@
   box-sizing: border-box
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
@@ -775,4 +779,50 @@ a:hover {
 /* Cursor pointer for the "Load more" button on desktop */
 #loadMoreReviews {
   cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  /* removes underline */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a.facebook {
+  background: #3b5998;
+  /* Facebook blue */
+}
+
+.social-links a.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
 }
