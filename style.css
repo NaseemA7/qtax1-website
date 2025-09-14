@@ -872,3 +872,22 @@ a:hover {
     font-size: 1rem;
   }
 }
+
+/* Make the page fill the viewport */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flexbox layout: header + main + footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Let main take up remaining space */
+main {
+  flex: 1;
+}
